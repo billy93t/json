@@ -11,7 +11,7 @@ class Manager {
 
 # Connexion
 
-  public function connexion(Utilisateur $user) {
+  public function connexion(User $user) {
     $bdd = new BDD();
     $req = $bdd->co_bdd()->prepare('SELECT * FROM user
       WHERE email = :email
@@ -41,14 +41,14 @@ class Manager {
 
 # Déconnexion
 
-  public function deconnexion(Utilisateur $user) {
+  public function deconnexion(User $user) {
     session_destroy();
     header("Location: ../vue/Connexion.php");
   }
 
 # Inscription
 
-  public function inscription(Utilisateur $user) {
+  public function inscription(User $user) {
     $bdd = new BDD();
     $req = $bdd -> co_bdd()->prepare('SELECT email FROM user
       WHERE email = :email
