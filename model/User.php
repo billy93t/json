@@ -1,5 +1,5 @@
 <?php
-class Utilisateur{
+class User {
   private $id, $nom, $prenom, $email, $mdp, $dateNaissance, $departement;
 
   public function __construct($donnees){
