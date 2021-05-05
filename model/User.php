@@ -1,15 +1,13 @@
 <?php
 class Utilisateur{
-  private $idUtil, $nom, $prenom, $email, $mdp, $rang, $placeRes, $sommeTarif;
+  private $id, $nom, $prenom, $email, $mdp, $dateNaissance, $departement;
 
   public function __construct($donnees){
     $this->hydrate($donnees);
   }
 
-# Getters
-
-  public function getIdUtil() {
-    return $this->idUtil;
+  public function getId() {
+    return $this->id;
   }
 
   public function getEmail() {
@@ -28,22 +26,16 @@ class Utilisateur{
     return $this->prenom;
   }
 
-  public function getRang() {
-    return $this->rang;
+  public function getDateNaissance() {
+    return $this->$dateNaissance;
   }
 
-  public function getPlaceRes() {
-    return $this->placeRes;
+  public function getDepartement() {
+    return $this->departement;
   }
 
-  public function getSommeTarif() {
-    return $this->sommeTarif;
-  }
-
-# Setters
-
-  public function setIdUtil($idUtil) {
-    $this->idUtil = $idUtil;
+  public function setId($id) {
+    $this->id = $id;
   }
 
   public function setEmail($email) {
@@ -70,21 +62,13 @@ class Utilisateur{
     }
   }
 
-  public function setRang($rang) {
-    if (is_string($rang)) {
-      $this->rang = $rang;
-    }
+  public function setDateNaissance($dateNaissance) {
+    $this->$dateNaissance = $dateNaissance;
   }
 
-  public function setSommeTarif($sommeTarif) {
-    $this->sommeTarif = $sommeTarif;
+  public function setDepartement($departement) {
+    $this->departement = $departement;
   }
-
-  public function setPlaceRes($placeRes) {
-    $this->placeRes = $placeRes;
-  }
-
-# Hydratation
 
   public function hydrate(array $res) {
     foreach ($res as $key => $value) {
